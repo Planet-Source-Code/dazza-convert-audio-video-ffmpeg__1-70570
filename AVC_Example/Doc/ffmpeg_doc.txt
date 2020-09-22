@@ -1,0 +1,406 @@
+
+-L                  show license
+-h                  show help
+-version            show version
+-formats            show available formats, codecs, protocols, ...
+-f fmt              force format
+-img img_fmt        force image format
+-i filename         input file name
+-y                  overwrite output files
+-t duration         set the recording time
+-fs limit_size      set the limit file size
+-ss time_off        set the start time offset
+-itsoffset time_off  set the input ts offset
+-title string       set the title
+-timestamp time     set the timestamp
+-author string      set the author
+-copyright string   set the copyright
+-comment string     set the comment
+-v verbose          control amount of logging
+-target type        specify target file type ("vcd", "svcd", "dvd", "dv", "pal-v
+cd", "ntsc-svcd", ...)
+-dframes number     set the number of data frames to record
+
+Video options:
+-b bitrate          set video bitrate (in kbit/s)
+-vframes number     set the number of video frames to record
+-r rate             set frame rate (Hz value, fraction or abbreviation)
+-s size             set frame size (WxH or abbreviation)
+-aspect aspect      set aspect ratio (4:3, 16:9 or 1.3333, 1.7777)
+-croptop size       set top crop band size (in pixels)
+-cropbottom size    set bottom crop band size (in pixels)
+-cropleft size      set left crop band size (in pixels)
+-cropright size     set right crop band size (in pixels)
+-padtop size        set top pad band size (in pixels)
+-padbottom size     set bottom pad band size (in pixels)
+-padleft size       set left pad band size (in pixels)
+-padright size      set right pad band size (in pixels)
+-padcolor color     set color of pad bands (Hex 000000 thru FFFFFF)
+-vn                 disable video
+-bt tolerance       set video bitrate tolerance (in kbit/s)
+-maxrate bitrate    set max video bitrate tolerance (in kbit/s)
+-minrate bitrate    set min video bitrate tolerance (in kbit/s)
+-bufsize size       set ratecontrol buffer size (in kByte)
+-vcodec codec       force video codec ('copy' to copy stream)
+-sameq              use same video quality as source (implies VBR)
+-pass n             select the pass number (1 or 2)
+-passlogfile file   select two pass log file name
+
+Advanced Video options:
+-pix_fmt format     set pixel format
+-g gop_size         set the group of picture size
+-intra              use only intra frames
+-vdt n              discard threshold
+-qscale q           use fixed video quantiser scale (VBR)
+-qmin q             min video quantiser scale (VBR)
+-qmax q             max video quantiser scale (VBR)
+-lmin lambda        min video lagrange factor (VBR)
+-lmax lambda        max video lagrange factor (VBR)
+-mblmin q           min macroblock quantiser scale (VBR)
+-mblmax q           max macroblock quantiser scale (VBR)
+-qdiff q            max difference between the quantiser scale (VBR)
+-qblur blur         video quantiser scale blur (VBR)
+-qsquish squish     how to keep quantiser between qmin and qmax (0 = clip, 1 = u
+se differentiable function)
+-qcomp compression  video quantiser scale compression (VBR)
+-rc_init_cplx complexity  initial complexity for 1-pass encoding
+-b_qfactor factor   qp factor between p and b frames
+-i_qfactor factor   qp factor between p and i frames
+-b_qoffset offset   qp offset between p and b frames
+-i_qoffset offset   qp offset between p and i frames
+-ibias bias         intra quant bias
+-pbias bias         inter quant bias
+-rc_eq equation     set rate control equation
+-rc_override override  rate control override for specific intervals
+-me method          set motion estimation method
+-dct_algo algo      set dct algo
+-idct_algo algo     set idct algo
+-me_threshold       motion estimaton threshold
+-mb_threshold       macroblock threshold
+-er n               set error resilience
+-ec bit_mask        set error concealment
+-bf frames          use 'frames' B frames
+-mbd mode           macroblock decision
+-mbcmp cmp function  macroblock compare function
+-ildctcmp cmp function  ildct compare function
+-subcmp cmp function  subpel compare function
+-cmp cmp function   fullpel compare function
+-precmp cmp function  pre motion estimation compare function
+-preme              pre motion estimation
+-lelim elim         single coefficient elimination threshold for luminance (nega
+tive values also consider DC coefficient)
+-celim elim         single coefficient elimination threshold for chrominance (ne
+gative values also consider DC coefficient)
+-lumi_mask          luminance masking
+-dark_mask          darkness masking
+-scplx_mask         spatial complexity masking
+-tcplx_mask         temporal complexity masking
+-p_mask             inter masking
+-4mv                use four motion vector by macroblock (MPEG4)
+-obmc               use overlapped block motion compensation (h263+)
+-lf                 use loop filter (h263+)
+-part               use data partitioning (MPEG4)
+-bug param          workaround not auto detected encoder bugs
+-strict strictness  how strictly to follow the standards
+-deinterlace        deinterlace pictures
+-ildct              force interlaced dct support in encoder (MPEG2/MPEG4)
+-ilme               force interlaced me support in encoder (MPEG2/MPEG4)
+-psnr               calculate PSNR of compressed frames
+-vstats             dump video coding statistics to file
+-vhook module       insert video processing module
+-aic                enable Advanced intra coding (h263+)
+-aiv                enable Alternative inter vlc (h263+)
+-umv                enable Unlimited Motion Vector (h263+)
+-ssm                enable Slice Structured mode (h263+)
+-alt                enable alternate scantable (MPEG2/MPEG4)
+-qprd
+-cbp
+-trell              enable trellis quantization
+-mv0                try to encode each MB with MV=<0,0> and choose the better on
+e (has no effect if mbd=0)
+-naq                normalize adaptive quantization
+-cgop               closed gop
+-sgop               strict gop
+-noout              skip bitstream encoding
+-scan_offset        enable SVCD Scan Offset placeholder
+-qpel               enable 1/4-pel
+-intra_matrix matrix  specify intra matrix coeffs
+-inter_matrix matrix  specify inter matrix coeffs
+-top                top=1/bottom=0/auto=-1 field first
+-nr                 noise reduction
+-qns                quantization noise shaping
+-sc_threshold threshold  scene change threshold
+-me_range range     limit motion vectors range (1023 for DivX player)
+-dc precision       intra_dc_precision
+-coder              coder type
+-context            context model
+-pred               prediction method
+-vprofile           profile
+-vlevel             level
+-nssew              weight
+-subq
+-mepc factor (1.0 = 256)  motion estimation bitrate penalty compensation
+-lowres
+-vtag fourcc/tag    force video tag/fourcc
+-skip_threshold threshold  frame skip threshold
+-skip_factor factor  frame skip factor
+-skip_exp exponent  frame skip exponent
+-skip_cmp compare function  frame skip compare function
+
+Audio options:
+-aframes number     set the number of audio frames to record
+-ab bitrate         set audio bitrate (in kbit/s)
+-ar rate            set audio sampling rate (in Hz)
+-ac channels        set number of audio channels
+-an                 disable audio
+-acodec codec       force audio codec ('copy' to copy stream)
+-vol volume         change audio volume (256=normal)
+
+Advanced Audio options:
+-atag fourcc/tag    force audio tag/fourcc
+
+Audio/Video grab options:
+-vd device          set video grab device
+-vc channel         set video grab channel (DV1394 only)
+-tvstd standard     set television standard (NTSC, PAL (SECAM))
+-ad device          set audio device
+-grab format        request grabbing using
+-gd device          set grab device
+
+Advanced options:
+-map file:stream    set input stream mapping
+-map_meta_data outfile:infile  set meta data information of outfile from infile
+-debug              print specific debug info
+-vismv              visualize motion vectors
+-benchmark          add timings for benchmarking
+-dump               dump each input packet
+-hex                when dumping packets, also dump the payload
+-bitexact           only use bit exact algorithms (for codec testing)
+-re                 read input at native frame rate
+-loop               loop (current only works with images)
+-threads count      thread count
+-vsync              video sync method
+-async              audio sync method
+-copyts             copy timestamps
+-shortest           finish encoding within shortest input
+-ps size            set packet size in bits
+-error rate         error rate
+-muxrate rate       set mux rate
+-packetsize size    set packet size
+-muxdelay seconds   set the maximum demux-decode delay
+-muxpreload seconds  set the initial demux-decode delay
+
+
+
+
+
+
+
+
+
+File formats:
+  E 3g2             3gp2 format
+  E 3gp             3gp format
+ D  4xm             4X Technologies format
+ D  RoQ             Id RoQ format
+ DE ac3             raw ac3
+ DE alaw            pcm A law format
+ DE amr             3gpp amr file format
+ DE asf             asf format
+  E asf_stream      asf format
+ DE au              SUN AU Format
+ DE avi             avi format
+  E crc             crc testing format
+ D  dts             raw dts
+ DE dv              DV video format
+  E dvd             MPEG2 PS format (DVD VOB)
+ D  ea              Electronic Arts Multimedia Format
+ DE ffm             ffm format
+ D  film_cpk        Sega FILM/CPK format
+ D  flic            FLI/FLC animation format
+ DE flv             flv format
+ DE gif             GIF Animation
+ DE h261            raw h261
+ DE h263            raw h263
+ DE h264            raw H264 video format
+ D  idcin           Id CIN format
+ DE image           image sequence
+ DE image2          image2 sequence
+ DE image2pipe      piped image2 sequence
+ DE imagepipe       piped image sequence
+ D  ipmovie         Interplay MVE format
+ DE m4v             raw MPEG4 video format
+ D  matroska        Matroska file format
+ DE mjpeg           MJPEG video
+  E mov             mov format
+ D  mov,mp4,m4a,3gp,3g2 QuickTime/MPEG4 format
+  E mp2             MPEG audio layer 2
+ DE mp3             MPEG audio layer 3
+  E mp4             mp4 format
+ DE mpeg            MPEG1 System format
+  E mpeg1video      MPEG video
+  E mpeg2video      MPEG2 video
+ DE mpegts          MPEG2 transport stream format
+ D  mpegvideo       MPEG video
+  E mpjpeg          Mime multipart JPEG format
+ DE mulaw           pcm mu law format
+ D  nsv             NullSoft Video format
+  E null            null video format
+ DE nut             nut format
+  E psp             psp mp4 format
+ D  psxstr          Sony Playstation STR format
+ DE rawvideo        raw video format
+ DE rm              rm format
+ DE s16be           pcm signed 16 bit big endian format
+ DE s16le           pcm signed 16 bit little endian format
+ DE s8              pcm signed 8 bit format
+ D  shn             raw shn
+  E singlejpeg      single JPEG image
+ D  sol             Sierra SOL Format
+  E svcd            MPEG2 PS format (VOB)
+ DE swf             Flash format
+ DE u16be           pcm unsigned 16 bit big endian format
+ DE u16le           pcm unsigned 16 bit little endian format
+ DE u8              pcm unsigned 8 bit format
+  E vcd             MPEG1 System format (VCD)
+ D  vmd             Sierra VMD format
+  E vob             MPEG2 PS format (VOB)
+ DE wav             wav format
+ D  wc3movie        Wing Commander III movie format
+ D  wsaud           Westwood Studios audio format
+ D  wsvqa           Westwood Studios VQA format
+ DE yuv4mpegpipe    YUV4MPEG pipe format
+
+Image formats (filename extensions, if any, follow):
+ DE gif    gif
+
+Codecs:
+ D V    4xm
+ D V D  8bps
+  EA    ac3
+ DEA    adpcm_4xm
+ DEA    adpcm_adx
+ DEA    adpcm_ct
+ DEA    adpcm_ea
+ DEA    adpcm_ima_dk3
+ DEA    adpcm_ima_dk4
+ DEA    adpcm_ima_qt
+ DEA    adpcm_ima_smjpeg
+ DEA    adpcm_ima_wav
+ DEA    adpcm_ima_ws
+ DEA    adpcm_ms
+ DEA    adpcm_swf
+ DEA    adpcm_xa
+ D A    alac
+ DEA    amr_nb
+ DEV D  asv1
+ DEV D  asv2
+ D V D  camtasia
+ D V D  cinepak
+ D V D  cljr
+ D V D  cyuv
+ DEV D  dvvideo
+ DEV D  ffv1
+ DEVSD  ffvhuff
+ D A    flac
+ D V D  flic
+ DEVSD  flv
+ DEA    g726
+ DEV D  h261
+ DEVSDT h263
+ D VSD  h263i
+  EV    h263p
+ D V DT h264
+ DEVSD  huffyuv
+ D V D  idcinvideo
+ D V    indeo3
+ D A    interplay_dpcm
+ D V D  interplayvideo
+  EV    ljpeg
+ D V D  loco
+ D A    mace3
+ D A    mace6
+ D V D  mdec
+ DEV D  mjpeg
+ D V D  mjpegb
+ DEA    mp2
+ DEA    mp3
+ D A    mp3adu
+ D A    mp3on4
+ DEVSDT mpeg1video
+ DEVSDT mpeg2video
+ DEVSDT mpeg4
+ D VSDT mpegvideo
+ DEVSD  msmpeg4
+ DEVSD  msmpeg4v1
+ DEVSD  msmpeg4v2
+ D V D  msrle
+ D V D  msvideo1
+ D V D  mszh
+ DEV    pam
+ DEV    pbm
+ DEA    pcm_alaw
+ DEA    pcm_mulaw
+ DEA    pcm_s16be
+ DEA    pcm_s16le
+ DEA    pcm_s8
+ DEA    pcm_u16be
+ DEA    pcm_u16le
+ DEA    pcm_u8
+ DEV    pgm
+ DEV    pgmyuv
+ DEV    png
+ DEV    ppm
+ D V D  qdraw
+ D V D  qpeg
+ D V D  qtrle
+ DEV    rawvideo
+ D A    real_144
+ D A    real_288
+ D A    roq_dpcm
+ D V D  roqvideo
+ D V D  rpza
+ DEV D  rv10
+ DEV D  rv20
+ D A    shorten
+ D V D  smc
+ DEV    snow
+ D A    sol_dpcm
+ DEA    sonic
+  EA    sonicls
+ D V D  sp5x
+ DEV D  svq1
+ D VSD  svq3
+ D V    theora
+ D V D  truemotion1
+ D V D  ultimotion
+ D V    vc9
+ D V D  vcr1
+ D A    vmdaudio
+ D V D  vmdvideo
+ D V    vp3
+ D V D  vqavideo
+ D A    wmav1
+ D A    wmav2
+ DEVSD  wmv1
+ DEVSD  wmv2
+ D V    wmv3
+ D V D  wnv1
+ D A    ws_snd1
+ D A    xan_dpcm
+ D V D  xan_wc3
+ D V D  xl
+ DEV D  zlib
+
+Supported file protocols:
+ file: pipe:
+Frame size, frame rate abbreviations:
+ ntsc pal qntsc qpal sntsc spal film ntsc-film sqcif qcif cif 4cif
+Motion estimation methods:
+ zero(fastest) full(slowest) log phods epzs(default) x1
+
+Note, the names of encoders and decoders dont always match, so there are
+several cases where the above table shows encoder only or decoder only entries
+even though both encoding and decoding are supported for example, the h263
+decoder corresponds to the h263 and h263p encoders, for file formats its even
+worse
