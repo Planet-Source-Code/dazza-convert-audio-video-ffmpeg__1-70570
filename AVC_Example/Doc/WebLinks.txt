@@ -1,0 +1,11 @@
+
+
+http://ffmpeg.mplayerhq.hu/ - FFmpeg homepage
+
+http://ffmpeg.mplayerhq.hu/general.html - list of supported formats
+
+http://en.wikipedia.org/wiki/FFmpeg - WIKI
+
+http://ffdshow.faireal.net/mirror/ffmpeg/ - win32 releases
+
+http://sourceforge.net/projects/ffmpeg/ - sourceforge
